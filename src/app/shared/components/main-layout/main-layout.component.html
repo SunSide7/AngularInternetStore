@@ -1,5 +1,21 @@
-<nav class="navbar main">
-	<h1>Angular Shop</h1>
+<nav class="navbar bg-primary">
+	<h1>
+		<a routerLink="/">Angular Shop</a>
+	</h1>
+
+	<div class="main-layout__btn-panel">
+		<ul>
+			<!-- <li><a [routerLink]="['/']">Главная</a></li> -->
+			<!-- <li><a [routerLink]="['']"></a></li> -->
+		</ul>
+
+		<ul>
+			<li><button class="btn btn-dark" [routerLink]="['/login']">Authorization</button></li>
+			<!-- <li><button class="btn btn-dark" [routerLink]="['']">Logout</button></li> -->
+		</ul>
+		
+	</div>
+
 </nav>
 
 <div class="container">
