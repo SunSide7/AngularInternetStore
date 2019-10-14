@@ -12,7 +12,7 @@
 
 		<div>
 			<img src="" alt="" class="card-img">
-			<button class="btn btn-dark">Add To Store</button>
+			<button class="btn btn-dark" (click)="getStuff(item.id)">Add To Store</button>
 			<button 
 				class="btn btn-dark"
 				[routerLink]="['/stuff-item', item.id]"

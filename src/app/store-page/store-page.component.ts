@@ -1,6 +1,6 @@
 import { Component, OnInit, Injectable } from '@angular/core';
 import { StoreItemComponent } from '../shared/components/store-item/store-item.component'
-import { StuffAddService } from '../shared/services/stuff-add.service'
+import { StoreService } from '../shared/services/store.service'
 
 @Component({
   selector: 'app-store-page',
@@ -10,9 +10,9 @@ import { StuffAddService } from '../shared/services/stuff-add.service'
 @Injectable({providedIn: 'root'})
 export class StorePageComponent implements OnInit {
 
-	stuff = this.stuffService.getStuffList()
+	stuff = this.storeService.getStuffList()
 
-  	constructor(private stuffService: StuffAddService) { }
+  	constructor(private storeService: StoreService) { }
 
   	ngOnInit() {
   	}

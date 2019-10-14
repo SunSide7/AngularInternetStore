@@ -1,6 +1,8 @@
 import { Component, OnInit, Injectable } from '@angular/core';
 import { StoreItemComponent } from '../shared/components/store-item/store-item.component'
+
 import { StuffAddService } from '../shared/services/stuff-add.service'
+import { StoreService } from '../shared/services/store.service'
 
 @Component({
   selector: 'app-main-page',
@@ -13,13 +15,21 @@ export class MainPageComponent implements OnInit {
 
 	stuff = this.stuffService.getStuffList()
 
-  	constructor(private stuffService: StuffAddService) { }
+  	constructor(
+      private stuffService: StuffAddService,
+      private storeService: StoreService
+    ) { }
 
   	ngOnInit() {
   	}
 
-  	getStuff() {
-  		console.log(this.stuff)
+  	getStuff(id) {
+      const stuffItem = this.stuff.filter(item => item.id === id)[0]
+
+      this.storeService.addStuff(stuffItem)
+
+      console.log(this.storeService.getStuffList())
+
   	}
 
 }

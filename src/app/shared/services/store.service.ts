@@ -5,11 +5,15 @@ import { Injectable } from '@angular/core'
 export class StoreService {
 	private card = []
 
-	onAddStuff(stuff) {
+	addStuff(stuff) {
 		this.card.push(stuff)
 	}
 
-	onDeleteStuff() {
+	deleteStuff() {
 		
+	}
+
+	getStuffList() {
+		return this.card
 	}
 }
