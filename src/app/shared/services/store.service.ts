@@ -26,6 +26,6 @@ export class StoreService {
 	}
 
 	clearStuffList() {
-		this.card = []
+		this.card.splice(0, this.card.length)
 	}
 }
