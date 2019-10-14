@@ -7,5 +7,5 @@ export interface StuffItem {
 	name: string
 	image: string
 	description: string
-	id: number
+	id: string
 }

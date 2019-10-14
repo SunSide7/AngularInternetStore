@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router'
+import { StuffItem } from '../shared/interfaces'
+
+import { StuffAddService } from '../shared/services/stuff-add.service'
 
 @Component({
   selector: 'app-stuff-item-page',
@@ -7,9 +11,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StuffItemPageComponent implements OnInit {
 
-  constructor() { }
+	stuffItem: StuffItem
 
-  ngOnInit() {
-  }
+	constructor(
+	 private route: ActivatedRoute,
+	 private stuffService: StuffAddService
+	) { }
+
+	ngOnInit() {
+	 this.route.params.subscribe((params: Params) => {
+	  this.stuffItem = this.stuffService.getById(params.id)
+	 })
+	}
 
 }
