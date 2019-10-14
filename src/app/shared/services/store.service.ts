@@ -9,11 +9,19 @@ export class StoreService {
 		this.card.push(stuff)
 	}
 
-	deleteStuff() {
-		
+	deleteStuff(id) {
+		this.card.splice(id, 1)
 	}
 
 	getStuffList() {
 		return this.card
+	}
+
+	getNumberOfStuffList() {
+		let numberOfStuff = this.card.length
+
+		if (numberOfStuff) {
+			return (": " + numberOfStuff)
+		}
 	}
 }

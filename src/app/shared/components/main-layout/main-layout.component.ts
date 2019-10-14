@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service'
+import { StoreService } from '../../services/store.service'
 
 @Component({
   selector: 'app-main-layout',
@@ -9,8 +10,12 @@ import { AuthService } from '../../services/auth.service'
 export class MainLayoutComponent implements OnInit {
 
   store = []
+  storeNumber = this.storeService.getNumberOfStuffList()
 
-  constructor(private auth: AuthService) { }
+  constructor(
+    private auth: AuthService,
+    private storeService: StoreService
+   ) { }
 
   ngOnInit() {
   }
@@ -18,6 +23,10 @@ export class MainLayoutComponent implements OnInit {
   click() {
   	console.log("this.auth:", this.auth.getIsAuth())
   	
+  }
+
+  getStuffNumber() {
+    return this.storeService.getNumberOfStuffList()
   }
 
 }

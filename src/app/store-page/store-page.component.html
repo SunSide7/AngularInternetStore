@@ -1,4 +1,4 @@
-<div class="store" (click)="getStuff()">
+<div class="store">
 	<h1>Store</h1>
 	<!-- <app-store-item></app-store-item> -->
 	
@@ -16,7 +16,7 @@
 			
 		</div>
 
-		<button class="btn btn-dark">Delete Stuff</button>
+		<button class="btn btn-dark" (click)="deleteStuff(item.id)">Delete Stuff</button>
 	</div>
 
 </div>

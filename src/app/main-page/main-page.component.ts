@@ -28,8 +28,6 @@ export class MainPageComponent implements OnInit {
 
       this.storeService.addStuff(stuffItem)
 
-      console.log(this.storeService.getStuffList())
-
   	}
 
 }
