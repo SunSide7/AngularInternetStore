@@ -24,4 +24,8 @@ export class StoreService {
 			return (": " + numberOfStuff)
 		}
 	}
+
+	clearStuffList() {
+		this.card = []
+	}
 }

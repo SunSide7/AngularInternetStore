@@ -6,6 +6,7 @@ import { StuffItemPageComponent } from './stuff-item-page/stuff-item-page.compon
 import { LoginPageComponent } from './login-page/login-page.component'
 import { AuthGuard } from './shared/guards/auth.guard'
 import { StorePageComponent } from './store-page/store-page.component'
+import { PaymentSuccessPageComponent } from './payment-success-page/payment-success-page.component'
 
 const routes: Routes = [
 	{
@@ -14,7 +15,8 @@ const routes: Routes = [
 			{path: '', component: MainPageComponent},
 			{path: 'stuff-item/:id', component: StuffItemPageComponent},
 			{path: 'login', component: LoginPageComponent},
-			{path: 'store', component: StorePageComponent}
+			{path: 'store', component: StorePageComponent},
+			{path: 'payment-success', component: PaymentSuccessPageComponent}
 		]
 	}
 ];

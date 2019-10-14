@@ -14,7 +14,8 @@ import { StoreItemComponent } from './shared/components/store-item/store-item.co
 
 import { AuthService } from './shared/services/auth.service'
 import { StuffAddService } from './shared/services/stuff-add.service';
-import { StoreService } from './shared/services/store.service'
+import { StoreService } from './shared/services/store.service';
+import { PaymentSuccessPageComponent } from './payment-success-page/payment-success-page.component'
   
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { StoreService } from './shared/services/store.service'
     LoginPageComponent,
     StorePageComponent,
     StoreItemComponent,
+    PaymentSuccessPageComponent,
     ],
   imports: [
     BrowserModule,

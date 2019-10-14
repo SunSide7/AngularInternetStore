@@ -25,10 +25,6 @@ export class StorePageComponent implements OnInit {
       const stuffItemIdToDelete = this.stuff.indexOf(this.stuff.find(item => item.id === id))
 
       this.storeService.deleteStuff(stuffItemIdToDelete)
-
-      // console.log(stuffItemIdToDelete)
-
-      // console.log("Stuff Item to delete:", this.stuff.find(item => item.id === id))
     }
 
     getStuffNumber() {

@@ -19,4 +19,12 @@
 		<button class="btn btn-dark" (click)="deleteStuff(item.id)">Delete Stuff</button>
 	</div>
 
+	<button  *ngIf="storeService.getNumberOfStuffList(); else callToActionText" class="btn btn-dark">Buy This!</button>
+
+	<ng-template #callToActionText>
+		Вы пока ничего не выбрали.
+		<!-- <br> -->
+		<!-- <a routerLink="">На главную</a> -->
+	</ng-template>
+
 </div>
