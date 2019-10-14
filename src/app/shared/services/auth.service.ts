@@ -15,6 +15,10 @@ export class AuthService {
 		console.log("Service worked! Auth:", this.isAuth)
 	}
 
+	getIsAuth() {
+		return this.isAuth
+	}
+
 	isAuthenticated(): Promise<boolean> {
 		return new Promise(resolve => {
 			setTimeout(() => {

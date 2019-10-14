@@ -12,7 +12,7 @@ const routes: Routes = [
 			{path: '', redirectTo: '/', pathMatch: 'full'},
 			{path: '', component: MainPageComponent},
 			{path: 'stuff-item/:id', component: StuffItemPageComponent},
-			{path: 'login', component: LoginPageComponent, canActivate: [AuthGuard]}
+			{path: 'login', component: LoginPageComponent}
 		]
 	}
 ];
