@@ -6,7 +6,7 @@ export class StoreService {
 	private card = []
 
 	addStuff(stuff) {
-		this.card.push(stuff)
+		this.card.unshift(stuff)
 	}
 
 	deleteStuff(id) {
