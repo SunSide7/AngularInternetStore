@@ -14,6 +14,7 @@ import { StoreItemComponent } from './shared/components/store-item/store-item.co
 
 import { AuthService } from './shared/services/auth.service'
 import { StuffAddService } from './shared/services/stuff-add.service';
+import { StoreService } from './shared/services/store.service'
   
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { StuffAddService } from './shared/services/stuff-add.service';
   providers: [
     AuthService,
     StuffAddService,
+    StoreService
   ],
   bootstrap: [AppComponent]
 })
