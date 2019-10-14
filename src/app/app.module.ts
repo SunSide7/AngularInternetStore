@@ -15,7 +15,9 @@ import { StoreItemComponent } from './shared/components/store-item/store-item.co
 import { AuthService } from './shared/services/auth.service'
 import { StuffAddService } from './shared/services/stuff-add.service';
 import { StoreService } from './shared/services/store.service';
-import { PaymentSuccessPageComponent } from './payment-success-page/payment-success-page.component'
+import { PaymentSuccessPageComponent } from './payment-success-page/payment-success-page.component';
+import { ProfilePageComponent } from './profile-page/profile-page.component'
+import { ProfileInfoService } from './shared/services/profile-info.service'
   
 @NgModule({
   declarations: [
@@ -28,6 +30,7 @@ import { PaymentSuccessPageComponent } from './payment-success-page/payment-succ
     StorePageComponent,
     StoreItemComponent,
     PaymentSuccessPageComponent,
+    ProfilePageComponent,
     ],
   imports: [
     BrowserModule,
@@ -37,7 +40,8 @@ import { PaymentSuccessPageComponent } from './payment-success-page/payment-succ
   providers: [
     AuthService,
     StuffAddService,
-    StoreService
+    StoreService,
+    ProfileInfoService,
   ],
   bootstrap: [AppComponent]
 })

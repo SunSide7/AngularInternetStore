@@ -9,3 +9,10 @@ export interface StuffItem {
 	description: string
 	id: string
 }
+
+export interface ProfileInfo {
+	name: string
+	email: string
+	password: string
+	confirmPassword: string
+}

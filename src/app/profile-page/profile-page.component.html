@@ -1,0 +1,114 @@
+<div class="card">
+	<div class="card-header">
+		<h2>Профиль</h2>
+	</div>
+
+	<div class="card-content">
+
+		<form [formGroup]="form">
+			<div>
+				<img class="profile__avatar" src="" alt="">
+			</div>
+
+			<div class="profile__input-panel">
+				<div 
+					[ngClass]="{invalid: form.get('name').touched && form.get('name').invalid}"
+					class="profile__name"
+				>
+					<label for="text">Имя</label>
+					<input id="text" type="text" class="profile__name-input" formControlName="name">
+				</div>
+				
+				<div 
+					[ngClass]="{invalid: form.get('email').touched && form.get('email').invalid}"
+					class="profile__emaill"
+				>
+					<label for="email">Email</label>
+					<input id="email" type="email" class="profile__name-input" formControlName="email">
+
+					<div
+						*ngIf="form.get('email').touched && form.get('email').invalid" 
+						class="validation"
+					>
+						<small *ngIf="form.get('email').errors.required">
+							Введите ваш email
+						</small>
+
+						<small *ngIf="form.get('email').errors.email">
+							Введите корректный email адрес
+						</small>
+
+						
+					</div>
+				</div>
+
+
+				<div 
+					[ngClass]="{invalid: form.get('password').touched && form.get('password').invalid}"
+					class="profile__password"
+				>
+					<label for="password">Пароль</label>
+					<input id="password" type="password" class="profile__name-input" formControlName="password">
+					<div 
+						class="validation"
+						*ngIf="form.get('password').touched && form.get('password').invalid"
+					>
+
+						<small *ngIf="form.get('password').errors.required">
+							Введите пароль
+						</small>
+
+						<small *ngIf="form.get('password').errors.minlength">
+							Пароль должен быть не менее 
+							{{form.get('password').errors.minlength.requiredLength}} 
+							символов. Сейчас он 
+							{{form.get('password').errors.minlength.actualLength}} 
+							символа.
+						</small>
+
+						
+					</div>
+				</div>
+				
+				<div 
+					class="profile__password"
+					[ngClass]="{invalid: form.get('confirmPassword').touched && form.get('confirmPassword').invalid}"
+				>
+					<label for="confirmPassword">Подтвердите пароль</label>
+					<input id="confirmPassword" type="password" class="profile__name-input" formControlName="confirmPassword">
+					<div 
+						class="validation"
+						*ngIf="form.get('confirmPassword').touched && form.get('confirmPassword').invalid"
+					>
+
+						<small *ngIf="form.get('confirmPassword').errors.required">
+							Подтвердите пароль
+						</small>
+
+						<small *ngIf="form.get('confirmPassword').errors.minlength">
+							Пароль должен быть не менее 
+							{{form.get('confirmPassword').errors.minlength.requiredLength}} 
+							символов. Сейчас он 
+							{{form.get('confirmPassword').errors.minlength.actualLength}} 
+							символа.
+						</small>
+
+						
+					</div>
+				</div>
+			</div>
+
+			<div class="profile__button-panel">
+				<button class="btn btn-danger" (click)="onProfileSave()">Сохранить</button>
+				<button class="btn btn-danger" (click)="onProfileCancel()">Отменить</button>
+			</div>
+
+			
+
+			
+			
+		</form>
+
+
+	</div>
+</div>

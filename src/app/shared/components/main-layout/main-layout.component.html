@@ -10,13 +10,17 @@
 		</ul>
 
 		<ul>
+			<li><a [routerLink]="['/profile']" [ngClass]="{hide: !auth.getIsAuth()}">Profile</a></li>
+		</ul>
+		
+		<ul>
 			<li><button class="btn btn-dark" [ngClass]="{hide: auth.getIsAuth()}" [routerLink]="['/login']">Authorization</button></li>
-			<li><button class="btn btn-dark" [ngClass]="{hide: !auth.getIsAuth()}" (click)="auth.logout()">Logout</button></li>
+			<li><button class="btn btn-dark" [ngClass]="{hide: !auth.getIsAuth()}" (click)="auth.logout()" [routerLink]="['/']" >Logout</button></li>
 		</ul>
 
 		<ul>
 			<li>
-				<a [routerLink]="['/store']" [ngClass]="{hide: !auth.getIsAuth()}">Card {{ getStuffNumber() }}</a>
+				<a [routerLink]="['/store']">Card {{ getStuffNumber() }}</a>
 			</li>
 		</ul>
 		

@@ -7,6 +7,7 @@ import { LoginPageComponent } from './login-page/login-page.component'
 import { AuthGuard } from './shared/guards/auth.guard'
 import { StorePageComponent } from './store-page/store-page.component'
 import { PaymentSuccessPageComponent } from './payment-success-page/payment-success-page.component'
+import { ProfilePageComponent } from './profile-page/profile-page.component'
 
 const routes: Routes = [
 	{
@@ -16,7 +17,9 @@ const routes: Routes = [
 			{path: 'stuff-item/:id', component: StuffItemPageComponent},
 			{path: 'login', component: LoginPageComponent},
 			{path: 'store', component: StorePageComponent},
-			{path: 'payment-success', component: PaymentSuccessPageComponent}
+			{path: 'payment-success', component: PaymentSuccessPageComponent},
+			{path: 'profile', component: ProfilePageComponent, canActivate: [AuthGuard]},
+			// {path: 'profile', component: ProfilePageComponent},
 		]
 	}
 ];
