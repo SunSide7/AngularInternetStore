@@ -10,7 +10,11 @@ import { StuffItemPageComponent } from './stuff-item-page/stuff-item-page.compon
 import { StuffItemComponent } from './shared/components/stuff-item/stuff-item.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { StorePageComponent } from './store-page/store-page.component';
+import { StoreItemComponent } from './shared/components/store-item/store-item.component';
 
+import { AuthService } from './shared/services/auth.service'
+import { StuffAddService } from './shared/services/stuff-add.service';
+  
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,14 +23,18 @@ import { StorePageComponent } from './store-page/store-page.component';
     StuffItemPageComponent,
     StuffItemComponent,
     LoginPageComponent,
-    StorePageComponent
-  ],
+    StorePageComponent,
+    StoreItemComponent,
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    AuthService,
+    StuffAddService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

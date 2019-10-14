@@ -8,6 +8,8 @@ import { AuthService } from '../../services/auth.service'
 })
 export class MainLayoutComponent implements OnInit {
 
+  store = []
+
   constructor(private auth: AuthService) { }
 
   ngOnInit() {
