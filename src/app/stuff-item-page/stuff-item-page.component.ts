@@ -3,6 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router'
 import { StuffItem } from '../shared/interfaces'
 
 import { StuffAddService } from '../shared/services/stuff-add.service'
+import { StoreService } from '../shared/services/store.service'
 
 @Component({
   selector: 'app-stuff-item-page',
@@ -15,13 +16,20 @@ export class StuffItemPageComponent implements OnInit {
 
 	constructor(
 	 private route: ActivatedRoute,
-	 private stuffService: StuffAddService
+	 private stuffAddService: StuffAddService,
+	 private storeService: StoreService,
 	) { }
 
 	ngOnInit() {
 	 this.route.params.subscribe((params: Params) => {
-	  this.stuffItem = this.stuffService.getById(params.id)
+	  this.stuffItem = this.stuffAddService.getById(params.id)
 	 })
+	}
+
+	onAddToCard() {
+		const stuffItem = this.stuffAddService.getById(this.stuffItem.id)
+
+		this.storeService.addStuff(stuffItem)
 	}
 
 }
