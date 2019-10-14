@@ -4,6 +4,7 @@ import { MainLayoutComponent } from './shared/components/main-layout/main-layout
 import { MainPageComponent } from './main-page/main-page.component'
 import { StuffItemPageComponent } from './stuff-item-page/stuff-item-page.component'
 import { LoginPageComponent } from './login-page/login-page.component'
+import { AuthGuard } from './shared/guards/auth.guard'
 
 const routes: Routes = [
 	{
@@ -11,7 +12,7 @@ const routes: Routes = [
 			{path: '', redirectTo: '/', pathMatch: 'full'},
 			{path: '', component: MainPageComponent},
 			{path: 'stuff-item/:id', component: StuffItemPageComponent},
-			{path: 'login', component: LoginPageComponent}
+			{path: 'login', component: LoginPageComponent, canActivate: [AuthGuard]}
 		]
 	}
 ];
