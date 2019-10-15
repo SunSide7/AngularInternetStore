@@ -13,7 +13,7 @@ import { StoreService } from '../shared/services/store.service'
 @Injectable({providedIn: 'root'})
 export class MainPageComponent implements OnInit {
 
-	stuff = this.stuffService.getStuffList()
+	  stuff = this.stuffService.getStuffList()
 
   	constructor(
       private stuffService: StuffAddService,
