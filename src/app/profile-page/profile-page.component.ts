@@ -52,13 +52,22 @@ export class ProfilePageComponent implements OnInit {
 
   		if (this.isInfoChanged) {
 
-  			this.profileInfoService.setProfileInfo('name', this.form.value.name)
-			this.profileInfoService.setProfileInfo('email', this.form.value.email)
-			this.profileInfoService.setProfileInfo('password', this.form.value.password)
-			this.profileInfoService.setProfileInfo('confirmPassword', this.form.value.confirmPassword)
+  			this.profileInfoService.setProfileInfo('name', this.form.value.name.trim())
+			this.profileInfoService.setProfileInfo('email', this.form.value.email.trim())
+			this.profileInfoService.setProfileInfo('password', this.form.value.password.trim())
+			this.profileInfoService.setProfileInfo('confirmPassword', this.form.value.confirmPassword.trim())
+
+			this.form = new FormGroup({
+	  			name: new FormControl(this.profileInfo.name, []),
+	  			email: new FormControl(this.profileInfo.email, []),
+	  			password: new FormControl(this.profileInfo.password, []),
+	  			confirmPassword: new FormControl(this.profileInfo.confirmPassword, []),
+	  		})
 
   			this.isInfoChanged = false 
   		}
+
+  		console.log(this.form)
 
   	}
 
