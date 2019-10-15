@@ -1,23 +1,9 @@
 <div class="store">
 	<h1>Store</h1>
-	<!-- <app-store-item></app-store-item> -->
+	<app-store-item *ngFor="let item of stuff" [item]="item"></app-store-item>
 	
 	<!-- Stuff Item -->
-	<div *ngFor="let item of stuff" class="card store-info__card">
-		<div class="store-info">
-			<div class="card-header">
-				<h2>{{ item.name }}</h2>
-			</div>
-
-			<div class="description">
-				<img src="" alt="" class="card-img">
-				<p>{{ item.description }}</p>
-			</div>
-			
-		</div>
-
-		<button class="btn btn-dark" (click)="deleteStuff(item.id)">Delete Stuff</button>
-	</div>
+	
 
 	<button  *ngIf="storeService.getNumberOfStuffList(); else callToActionText" class="btn btn-dark" (click)="onBuyActionClick()">Buy This!</button>
 

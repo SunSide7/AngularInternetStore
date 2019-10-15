@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { StuffAddService } from '../../services/stuff-add.service'
+import { StuffItem } from '../../interfaces'
+import { StoreService } from '../../services/store.service'
 
 @Component({
   selector: 'app-store-item',
@@ -8,9 +10,22 @@ import { StuffAddService } from '../../services/stuff-add.service'
 })
 export class StoreItemComponent implements OnInit {
 
-  	constructor() { }
+	@Input("item") item: StuffItem
+
+  	constructor(private storeService: StoreService) { }
 
   	ngOnInit() {
   	}
+
+
+  	getStuff() {
+  		// console.log(this.stuff)
+  	}
+
+    deleteStuff(id) {
+
+      this.storeService.deleteStuff(this.item)
+
+    }
 
 }

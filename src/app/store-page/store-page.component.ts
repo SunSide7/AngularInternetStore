@@ -21,16 +21,6 @@ export class StorePageComponent implements OnInit {
   	ngOnInit() {
   	}
 
-  	getStuff() {
-  		// console.log(this.stuff)
-  	}
-
-    deleteStuff(id) {
-      const stuffItemIdToDelete = this.stuff.indexOf(this.stuff.find(item => item.id === id))
-
-      this.storeService.deleteStuff(stuffItemIdToDelete)
-    }
-
     getStuffNumber() {
       this.storeService.getNumberOfStuffList()
     }
