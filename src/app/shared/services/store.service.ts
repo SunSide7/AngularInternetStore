@@ -13,7 +13,7 @@ export class StoreService {
         if (!stuff.quantity) {
 
             stuff.deleted = false;
-            console.log(stuff.deleted);
+
             this.card.unshift(stuff);
 
             stuff.quantity += 1;
@@ -26,7 +26,7 @@ export class StoreService {
     }
 
     deleteStuff(stuff) {
-        const splicedItem = this.card.splice( this.card.indexOf(stuff), 1);
+        const splicedItem = this.card.splice(this.card.indexOf(stuff), 1);
 
         this.stuffAddService.setStuffDeleted(stuff.id);
         this.stuffAddService.getById(stuff.id).quantity = 0;
@@ -37,7 +37,7 @@ export class StoreService {
     }
 
     getNumberOfStuffList() {
-        let numberOfStuff = this.card.length;
+        const numberOfStuff = this.card.length;
 
         if (numberOfStuff) {
             return (': ' + numberOfStuff);
@@ -46,5 +46,6 @@ export class StoreService {
 
     clearStuffList() {
         this.card.splice(0, this.card.length);
+        this.stuffAddService.getStuffList().forEach(item => item.quantity = 0);
     }
 }

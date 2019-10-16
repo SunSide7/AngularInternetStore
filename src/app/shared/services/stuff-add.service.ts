@@ -47,8 +47,6 @@ export class StuffAddService {
     }
 
     setStuffDeleted(id) {
-        this.stuff.find(item => id).deleted = true
-        console.log(id)
-        console.log(this.stuff.find(item => id).deleted)
+        this.stuff.find(item => id).deleted = true;
     }
 }
