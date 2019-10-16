@@ -1,31 +1,31 @@
-import { Injectable } from '@angular/core'
+import {Injectable} from '@angular/core';
 
 @Injectable({providedIn: 'root'})
 
 export class StoreService {
-	private card = []
+    private card = [];
 
-	addStuff(stuff) {
-		this.card.unshift(stuff)
-	}
+    addStuff(stuff) {
+        this.card.unshift(stuff);
+    }
 
-	deleteStuff(id) {
-		this.card.splice(id, 1)
-	}
+    deleteStuff(id) {
+        this.card.splice(id, 1);
+    }
 
-	getStuffList() {
-		return this.card
-	}
+    getStuffList() {
+        return this.card;
+    }
 
-	getNumberOfStuffList() {
-		let numberOfStuff = this.card.length
+    getNumberOfStuffList() {
+        let numberOfStuff = this.card.length;
 
-		if (numberOfStuff) {
-			return (": " + numberOfStuff)
-		}
-	}
+        if (numberOfStuff) {
+            return (': ' + numberOfStuff);
+        }
+    }
 
-	clearStuffList() {
-		this.card.splice(0, this.card.length)
-	}
+    clearStuffList() {
+        this.card.splice(0, this.card.length);
+    }
 }

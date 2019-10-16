@@ -1,9 +1,6 @@
 <div class="store">
 	<h1>Store</h1>
 	<app-store-item *ngFor="let item of stuff" [item]="item"></app-store-item>
-	
-	<!-- Stuff Item -->
-	
 
 	<button  *ngIf="storeService.getNumberOfStuffList(); else callToActionText" class="btn btn-dark" (click)="onBuyActionClick()">Buy This!</button>
 

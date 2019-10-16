@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms'
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,9 +16,9 @@ import { AuthService } from './shared/services/auth.service'
 import { StuffAddService } from './shared/services/stuff-add.service';
 import { StoreService } from './shared/services/store.service';
 import { PaymentSuccessPageComponent } from './payment-success-page/payment-success-page.component';
-import { ProfilePageComponent } from './profile-page/profile-page.component'
-import { ProfileInfoService } from './shared/services/profile-info.service'
-  
+import { ProfilePageComponent } from './profile-page/profile-page.component';
+import { ProfileInfoService } from './shared/services/profile-info.service';
+
 @NgModule({
   declarations: [
     AppComponent,
