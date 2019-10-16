@@ -37,7 +37,7 @@ export class StoreService {
     }
 
     getNumberOfStuffList() {
-        const numberOfStuff = this.card.length;
+        const numberOfStuff = this.card.reduce((sum, item) => sum + item.quantity, 0);
 
         if (numberOfStuff) {
             return (': ' + numberOfStuff);
