@@ -31,6 +31,8 @@ export class StuffItemPageComponent implements OnInit {
         const stuffItem = this.stuffAddService.getById(this.stuffItem.id);
 
         this.storeService.addStuff(stuffItem);
+
+        console.log(stuffItem);
     }
 
 }

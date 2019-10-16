@@ -27,6 +27,8 @@ export class StoreItemComponent implements OnInit {
 
         this.storeService.deleteStuff(this.item);
 
+        console.log("from deleteStuff:", this.item)
+
     }
 
 }

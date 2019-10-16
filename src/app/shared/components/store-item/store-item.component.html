@@ -1,15 +1,20 @@
 <div class="card store-item__card">
-	<div class="store-info">
-		<div class="card-header">
-			<h2>{{ item.name }}</h2>
-		</div>
+  <div class="store-item__info">
+    <div class="card-header">
+      <h2>{{ item.name }}</h2>
+    </div>
 
-		<div class="description">
-			<img src="" alt="" class="card-img">
-			<p>{{ item.description }}</p>
-		</div>
-		
-	</div>
+    <div class="description">
+      <img src="" alt="" class="card-img">
+      <p>{{ item.description }}</p>
+    </div>
 
-	<button class="btn btn-dark" (click)="deleteStuff(item.id)">Delete Stuff</button>
+  </div>
+
+  <div class="store-item__stuff-quantity">
+		<h3>Количество товара</h3>
+    <p>{{ item.quantity }}</p>
+  </div>
+
+  <button class="btn btn-dark" (click)="deleteStuff(item.id)">Delete Stuff</button>
 </div>
