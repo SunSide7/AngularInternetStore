@@ -46,10 +46,7 @@ export class LoginPageComponent implements OnInit {
         };
 
         this.submitted = true;
-
-        // this.dialogService.showModalById(this.idModalDialogMessage);
-        this.dialogService.getModalState(this.submitted);
-
+        this.dialogService.showInfoById(this.submitted, this.idModalDialogMessage);
 
     }
 

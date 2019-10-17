@@ -17,11 +17,6 @@ export class DialogModalComponent implements OnInit {
   ngOnInit() {
   }
 
-  // onShow() {
-  //   console.log('From Dialog Modal Component:', this.isVisible);
-  //   return this.isVisible;
-  // }
-
   onClose(event) {
     this.dialogService.isModalVisible = false;
   }

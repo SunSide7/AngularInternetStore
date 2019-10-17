@@ -2,6 +2,7 @@ import {Component, OnInit, Injectable} from '@angular/core';
 import {StoreItemComponent} from '../shared/components/store-item/store-item.component';
 import {StoreService} from '../shared/services/store.service';
 import {Router} from '@angular/router';
+import {DialogModalService} from '../shared/services/dialog-modal.service';
 
 @Component({
     selector: 'app-store-page',
@@ -12,9 +13,11 @@ import {Router} from '@angular/router';
 export class StorePageComponent implements OnInit {
 
     stuff = this.storeService.getStuffList();
+    idModalDialogMessage: string = 'card_buy_clicked';
 
     constructor(
         private storeService: StoreService,
+        private dialogService: DialogModalService,
         private router: Router
     ) {
     }
@@ -28,6 +31,7 @@ export class StorePageComponent implements OnInit {
 
     onBuyActionClick() {
         this.storeService.clearStuffList();
+        this.dialogService.showInfoById(true, this.idModalDialogMessage);
         this.router.navigate(['/payment-success']);
     }
 
