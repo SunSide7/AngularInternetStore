@@ -2,18 +2,23 @@ import {Component, OnInit} from '@angular/core';
 import {FormGroup, FormControl, Validators} from '@angular/forms';
 import {User} from '../shared/interfaces';
 import {AuthService} from '../shared/services/auth.service';
+import {DialogModalService} from '../shared/services/dialog-modal.service';
 
 @Component({
     selector: 'app-login-page',
     templateUrl: './login-page.component.html',
-    styleUrls: ['./login-page.component.sass']
+    styleUrls: ['./login-page.component.sass'],
+    providers: [DialogModalService]
 })
 export class LoginPageComponent implements OnInit {
 
     form: FormGroup;
     submitted: boolean = false;
 
-    constructor(private auth: AuthService) {
+    constructor(
+      private auth: AuthService,
+      private dialogService: DialogModalService,
+    ) {
     }
 
     ngOnInit() {
@@ -40,6 +45,8 @@ export class LoginPageComponent implements OnInit {
         };
 
         this.submitted = true;
+
+        this.dialogService.showMessage('Login Page Btn Submit');
 
     }
 
