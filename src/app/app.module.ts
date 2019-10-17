@@ -18,6 +18,7 @@ import { StoreService } from './shared/services/store.service';
 import { PaymentSuccessPageComponent } from './payment-success-page/payment-success-page.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { ProfileInfoService } from './shared/services/profile-info.service';
+import { DialogModalComponent } from './shared/components/modals/dialog-modal/dialog-modal.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { ProfileInfoService } from './shared/services/profile-info.service';
     StoreItemComponent,
     PaymentSuccessPageComponent,
     ProfilePageComponent,
+    DialogModalComponent,
     ],
   imports: [
     BrowserModule,

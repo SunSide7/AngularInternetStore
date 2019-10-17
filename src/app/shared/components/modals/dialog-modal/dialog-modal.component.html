@@ -1,0 +1,16 @@
+<button class="btn btn-dark" (click)="onShow($event)">Show Modal</button>
+
+<div *ngIf="isVisible" class="modal">
+  <div class="modal__overlay">
+
+    <div class="dialog-modal">
+      <div class="dialog-modal__message">
+        <p>Dialog Message</p>
+      </div>
+      <button class="btn btn-primary" (click)="onClose($event)">Close</button>
+    </div>
+
+    <button class="modal__close-btn" (click)="onClose($event)">&times;</button>
+
+  </div>
+</div>

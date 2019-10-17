@@ -1,0 +1,37 @@
+.dialog-modal
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  width: 400px
+  height: 150px
+  background-color: white
+  border: 1px solid #cccccc
+
+  &__message
+    margin-bottom: 20px
+
+.modal
+  &__overlay
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background-color: rgba(black, 0.8)
+    display: flex
+    justify-content: center
+    align-items: center
+    padding-bottom: 255px
+
+  &__close-btn
+    position: absolute
+    background-color: transparent
+    border: none
+    width: 36px
+    height: 35px
+    font-size: 28px
+    transform: translateX(183px) translateY(-59px)
+    cursor: pointer
+    outline: none
+    box-sizing: border-box
