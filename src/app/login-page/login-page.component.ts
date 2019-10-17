@@ -14,6 +14,7 @@ export class LoginPageComponent implements OnInit {
 
     form: FormGroup;
     submitted: boolean = false;
+    idModalDialogMessage: string = 'login_page_submit'
 
     constructor(
       private auth: AuthService,
@@ -46,7 +47,9 @@ export class LoginPageComponent implements OnInit {
 
         this.submitted = true;
 
-        this.dialogService.showMessage('Login Page Btn Submit');
+        // this.dialogService.showModalById(this.idModalDialogMessage);
+        this.dialogService.getModalState(this.submitted);
+
 
     }
 

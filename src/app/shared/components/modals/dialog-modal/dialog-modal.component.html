@@ -1,6 +1,6 @@
 <!--<button class="btn btn-dark" (click)="onShow($event)">Show Modal</button>-->
 
-<div *ngIf="isVisible" class="modal">
+<div *ngIf="dialogService.isModalVisible" class="modal">
   <div class="modal__overlay">
 
     <div class="dialog-modal">

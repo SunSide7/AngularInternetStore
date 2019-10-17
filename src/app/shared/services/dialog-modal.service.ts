@@ -1,10 +1,19 @@
 import {Injectable} from '@angular/core';
 
-@Injectable()
+@Injectable({providedIn: 'root'})
 export class DialogModalService {
 
-  showMessage(toggled) {
-    console.log(`from: Dialog Modal Service, ${toggled} toggled`);
+  isModalVisible = false;
+
+
+  showModalById(id) {
+    console.log(id);
+  }
+
+  getModalState(outerBtnState) {
+    this.isModalVisible = outerBtnState;
+    console.log('outerBtnState:', outerBtnState)
+    console.log('this.isModalVisible getting:', this.isModalVisible);
   }
 
 }
