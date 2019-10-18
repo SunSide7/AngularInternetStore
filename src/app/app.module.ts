@@ -19,6 +19,7 @@ import { PaymentSuccessPageComponent } from './payment-success-page/payment-succ
 import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { ProfileInfoService } from './shared/services/profile-info.service';
 import { DialogModalComponent } from './shared/components/modals/dialog-modal/dialog-modal.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { DialogModalComponent } from './shared/components/modals/dialog-modal/di
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
     AuthService,
