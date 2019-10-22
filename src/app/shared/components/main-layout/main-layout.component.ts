@@ -22,11 +22,6 @@ export class MainLayoutComponent implements OnInit {
   ngOnInit() {
   }
 
-  click() {
-  	console.log("this.auth:", this.auth.getIsAuth())
-
-  }
-
   getStuffNumber() {
     return this.storeService.getNumberOfStuffList()
   }

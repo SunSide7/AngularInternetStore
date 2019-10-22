@@ -11,7 +11,6 @@ import {DialogModalService} from '../../../services/dialog-modal.service';
 })
 export class DialogModalComponent {
   closeResult: string;
-  @Input('isDisabled') isDisabled;
 
   constructor(
     private modalService: NgbModal,

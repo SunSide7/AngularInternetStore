@@ -1,5 +1,4 @@
 import {Component, OnInit, Injectable} from '@angular/core';
-import {StoreItemComponent} from '../shared/components/store-item/store-item.component';
 import {StoreService} from '../shared/services/store.service';
 import {Router} from '@angular/router';
 import {DialogModalService} from '../shared/services/dialog-modal.service';
@@ -23,6 +22,7 @@ export class StorePageComponent implements OnInit {
     }
 
     ngOnInit() {
+        this.dialogService.setButtonNotDisabled()
         this.dialogService.fillInBtnText(this.idModalDialogMessage)
     }
 

@@ -12,6 +12,10 @@ export class DialogModalService {
     type: 'button'
   }
 
+  setButtonNotDisabled() {
+    this.submitProps.disabled = false;
+  }
+
   listenDisableState(state) {
     this.submitProps.disabled = state
   }

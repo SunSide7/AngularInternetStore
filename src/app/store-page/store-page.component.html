@@ -2,12 +2,13 @@
 	<h1>Store</h1>
 	<app-store-item *ngFor="let item of stuff" [item]="item"></app-store-item>
 
-  <app-dialog-modal *ngIf="storeService.getNumberOfStuffList(); else callToActionText" (click)="onBuyActionClick()"></app-dialog-modal>
+  <app-dialog-modal
+    *ngIf="storeService.getNumberOfStuffList(); else callToActionText"
+    (click)="onBuyActionClick()"
+  ></app-dialog-modal>
 
 	<ng-template #callToActionText>
 		Вы пока ничего не выбрали.
-		<!-- <br> -->
-		<!-- <a routerLink="">На главную</a> -->
 	</ng-template>
 
 </div>

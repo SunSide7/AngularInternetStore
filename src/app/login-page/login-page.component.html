@@ -1,4 +1,5 @@
-<form *ngIf="!submitted; else loggedIn" class="card" [formGroup]="form" (ngSubmit)="submit()" (input)="dialogService.listenDisableState(form.invalid)">
+<form *ngIf="!submitted; else loggedIn" class="card" [formGroup]="form" (ngSubmit)="submit()"
+      (input)="dialogService.listenDisableState(form.invalid)">
   <h2>Авторизация</h2>
 
   <div
@@ -50,15 +51,8 @@
     </div>
   </div>
 
-<!--  <button-->
-<!--    type="submit"-->
-<!--    class="btn btn-primary"-->
-<!--    [disabled]="form.invalid"-->
-<!--    (click)="auth.login()"-->
-<!--  >Войти-->
-<!--  </button>-->
 
-  <app-dialog-modal [isDisabled]="form.invalid"></app-dialog-modal>
+  <app-dialog-modal></app-dialog-modal>
 
 </form>
 

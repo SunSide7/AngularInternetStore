@@ -68,8 +68,6 @@ export class ProfilePageComponent implements OnInit {
             this.isInfoChanged = false;
         }
 
-        console.log(this.form);
-
     }
 
     onProfileCancel() {
