@@ -1,19 +1,27 @@
-<div class="card store-item__card">
-  <div class="store-item__info">
+<div class="card store-item__card row">
+  <div class="store-item__info col-md-4">
     <div class="card-header">
       <h2>{{ item.name }}</h2>
     </div>
 
-<!--    <div class="description">-->
-<!--      <img src="" alt="" class="card-img">-->
-<!--    </div>-->
 
   </div>
 
-  <div class="store-item__stuff-quantity">
+  <div class="store-item__stuff-quantity col-md-4">
 		<h3>Количество товара</h3>
     <p>{{ item.quantity }}</p>
   </div>
 
-  <button class="btn btn-dark" (click)="deleteStuff(item.id)">Delete Stuff</button>
+  <div class="col-md-4 store-item__btn-wrapper">
+    <button class="btn btn-dark" (click)="deleteStuff(item.id)">Delete Stuff</button>
+  </div>
+
 </div>
+
+
+
+<!-- Image here: -->
+
+<!--    <div class="description">-->
+<!--      <img src="" alt="" class="card-img">-->
+<!--    </div>-->
