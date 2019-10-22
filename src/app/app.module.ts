@@ -21,6 +21,7 @@ import { ProfileInfoService } from './shared/services/profile-info.service';
 import { DialogModalComponent } from './shared/components/modals/dialog-modal/dialog-modal.component';
 import {HttpClientModule} from '@angular/common/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { MultilevelMenuComponent } from './shared/components/multilevel-menu/multilevel-menu.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     PaymentSuccessPageComponent,
     ProfilePageComponent,
     DialogModalComponent,
+    MultilevelMenuComponent,
     ],
   imports: [
     BrowserModule,
