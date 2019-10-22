@@ -20,6 +20,8 @@ import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { ProfileInfoService } from './shared/services/profile-info.service';
 import { DialogModalComponent } from './shared/components/modals/dialog-modal/dialog-modal.component';
 import {HttpClientModule} from '@angular/common/http';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { ModalComponent } from './shared/components/modals/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -34,12 +36,14 @@ import {HttpClientModule} from '@angular/common/http';
     PaymentSuccessPageComponent,
     ProfilePageComponent,
     DialogModalComponent,
+    ModalComponent,
     ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [
     AuthService,
