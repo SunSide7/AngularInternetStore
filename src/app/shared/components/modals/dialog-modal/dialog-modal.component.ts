@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import {DialogModalService} from '../../../services/dialog-modal.service';
@@ -11,6 +11,7 @@ import {DialogModalService} from '../../../services/dialog-modal.service';
 })
 export class DialogModalComponent {
   closeResult: string;
+  @Input('isDisabled') isDisabled;
 
   constructor(
     private modalService: NgbModal,

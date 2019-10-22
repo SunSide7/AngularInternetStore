@@ -6,6 +6,15 @@ export class DialogModalService {
   isModalVisible = false;
   modalMessage = '';
   modalBtnText = '';
+  isButtonSubmit = false;
+  submitProps = {
+    disabled: true,
+    type: 'button'
+  }
+
+  listenDisableState(state) {
+    this.submitProps.disabled = state
+  }
 
   fillInBtnText(id) {
 
@@ -20,12 +29,13 @@ export class DialogModalService {
       default:
         return;
     }
+
   }
 
 
   showInfoById(outerBtnState, id) {
 
-    console.log('outerBtnState:', outerBtnState)
+    console.log('outerBtnState:', outerBtnState);
     this.modalMessage = id;
 
     switch (id) {
@@ -43,14 +53,14 @@ export class DialogModalService {
     }
     this.isModalVisible = outerBtnState;
 
-    console.log('this.isModalVisible:', this.isModalVisible)
+    console.log('this.isModalVisible:', this.isModalVisible);
   }
 
   closeModal() {
-    console.log(this.isModalVisible)
+    console.log(this.isModalVisible);
     this.isModalVisible = false;
 
-    console.log(this.isModalVisible)
+    console.log(this.isModalVisible);
   }
 
 }

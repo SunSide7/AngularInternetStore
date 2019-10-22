@@ -33,6 +33,9 @@ export class LoginPageComponent implements OnInit {
                 Validators.minLength(7)
             ]),
         });
+
+        this.dialogService.fillInBtnText(this.idModalDialogMessage)
+        this.dialogService.submitProps.type = 'submit'
     }
 
     submit() {

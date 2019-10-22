@@ -13,4 +13,12 @@
   </div>
 </ng-template>
 
-<button class="btn btn-dark" (click)="open(content)">{{dialogService.modalBtnText}}</button>
+<button
+    class="btn btn-dark"
+    type="{{dialogService.submitProps.type}}"
+    [disabled]="dialogService.submitProps.disabled"
+    (click)="open(content)">
+
+  {{dialogService.modalBtnText}}
+
+</button>
