@@ -1,4 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
+
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import {DialogModalService} from '../../../services/dialog-modal.service';
 
 @Component({
@@ -7,18 +9,29 @@ import {DialogModalService} from '../../../services/dialog-modal.service';
   styleUrls: ['./dialog-modal.component.sass'],
   // providers: [DialogModalService],
 })
-export class DialogModalComponent implements OnInit {
+export class DialogModalComponent {
+  closeResult: string;
 
-  // isVisible = this.dialogService.setModalState();
+  constructor(
+    private modalService: NgbModal,
+    private dialogService: DialogModalService
+  ) {}
 
-  constructor(private dialogService: DialogModalService) {
+  open(content) {
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
   }
 
-  ngOnInit() {
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return  `with: ${reason}`;
+    }
   }
-
-  onClose(event) {
-    this.dialogService.isModalVisible = false;
-  }
-
 }

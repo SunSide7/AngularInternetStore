@@ -2,7 +2,7 @@
 	<h1>Store</h1>
 	<app-store-item *ngFor="let item of stuff" [item]="item"></app-store-item>
 
-	<button  *ngIf="storeService.getNumberOfStuffList(); else callToActionText" class="btn btn-dark" (click)="onBuyActionClick()">Buy This!</button>
+  <app-dialog-modal *ngIf="storeService.getNumberOfStuffList(); else callToActionText" (click)="onBuyActionClick()"></app-dialog-modal>
 
 	<ng-template #callToActionText>
 		Вы пока ничего не выбрали.
@@ -12,4 +12,3 @@
 
 </div>
 
-<app-dialog-modal></app-dialog-modal>

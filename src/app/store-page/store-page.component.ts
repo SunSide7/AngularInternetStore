@@ -23,6 +23,7 @@ export class StorePageComponent implements OnInit {
     }
 
     ngOnInit() {
+        this.dialogService.fillInBtnText(this.idModalDialogMessage)
     }
 
     getStuffNumber() {
