@@ -1,4 +1,5 @@
 import {Injectable} from '@angular/core';
+import {AuthService} from './auth.service';
 
 @Injectable({providedIn: 'root'})
 export class DialogModalService {
@@ -6,11 +7,12 @@ export class DialogModalService {
   isModalVisible = false;
   modalMessage = '';
   modalBtnText = '';
-  isButtonSubmit = false;
   submitProps = {
     disabled: true,
     type: 'button'
   }
+
+  constructor(private authService: AuthService) {}
 
   setButtonNotDisabled() {
     this.submitProps.disabled = false;
@@ -46,6 +48,7 @@ export class DialogModalService {
       case 'login_page_submit':
         this.modalMessage = 'Вы успешно зашли в свой аккаунт!';
         this.modalBtnText = 'Login';
+        this.authService.login()
         break;
       case 'card_buy_clicked':
         this.modalMessage = 'Вы успешно оплатили свой заказ!';
@@ -59,12 +62,4 @@ export class DialogModalService {
 
     console.log('this.isModalVisible:', this.isModalVisible);
   }
-
-  closeModal() {
-    console.log(this.isModalVisible);
-    this.isModalVisible = false;
-
-    console.log(this.isModalVisible);
-  }
-
 }
