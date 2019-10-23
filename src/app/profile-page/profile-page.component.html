@@ -38,6 +38,12 @@
               Введите корректный email адрес
             </small>
 
+            <small *ngIf="form.get('email').errors.restrictedEmail">
+              Email {{form.get('email').value}} запрещен
+            </small>
+
+
+
 
           </div>
         </div>

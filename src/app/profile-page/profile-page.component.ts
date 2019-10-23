@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormGroup, FormControl, Validators} from '@angular/forms';
 import {ProfileInfoService} from '../shared/services/profile-info.service';
+import {MyValidators} from '../my.validators';
 
 @Component({
     selector: 'app-profile-page',
@@ -19,13 +20,15 @@ export class ProfilePageComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.form = new FormGroup({
+        // @ts-ignore
+      this.form = new FormGroup({
             name: new FormControl(this.profileInfo.name, [
                 Validators.required
             ]),
             email: new FormControl(this.profileInfo.email, [
                 Validators.required,
-                Validators.email
+                Validators.email,
+                MyValidators.restrictedEmails
             ]),
             password: new FormControl(this.profileInfo.password, [
                 Validators.required,

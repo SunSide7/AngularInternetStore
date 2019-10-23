@@ -3,6 +3,7 @@ import {FormGroup, FormControl, Validators} from '@angular/forms';
 import {User} from '../shared/interfaces';
 import {AuthService} from '../shared/services/auth.service';
 import {DialogModalService} from '../shared/services/dialog-modal.service';
+import {MyValidators} from '../my.validators';
 
 @Component({
     selector: 'app-login-page',
@@ -26,11 +27,11 @@ export class LoginPageComponent implements OnInit {
         this.form = new FormGroup({
             email: new FormControl(null, [
                 Validators.required,
-                Validators.email
+                Validators.email,
             ]),
             password: new FormControl(null, [
                 Validators.required,
-                Validators.minLength(7)
+                Validators.minLength(7),
             ]),
         });
 
