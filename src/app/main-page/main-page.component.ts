@@ -23,10 +23,18 @@ export class MainPageComponent implements OnInit {
 
   ngOnInit() {
 
-    this.stuffService.stuffFromServerInit()
-      .then(() => {
-        this.stuff = this.stuffService.getStuffList();
-      });
+    if (!this.stuffService.isStuffFromServer) {
+
+      this.stuffService.stuffFromServerInit()
+        .then(() => {
+          this.stuff = this.stuffService.getStuffList();
+        });
+
+    } else {
+
+      this.stuff = this.stuffService.getStuffList();
+
+    }
 
   }
 
