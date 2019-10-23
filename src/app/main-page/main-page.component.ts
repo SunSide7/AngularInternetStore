@@ -15,7 +15,6 @@ import {HttpClient} from '@angular/common/http';
 export class MainPageComponent implements OnInit {
 
   stuff = this.stuffService.getStuffList();
-  httpResponse: any;
 
   constructor(
     private stuffService: StuffAddService,
@@ -28,9 +27,8 @@ export class MainPageComponent implements OnInit {
     const stuff = this.http.get('https://api.myjson.com/bins/kqp6w')
       .subscribe(response => {
         console.log('Response', response);
-        this.httpResponse = response;
 
-        this.stuffService.getStuffListResponse(this.httpResponse)
+        this.stuffService.getStuffListResponse(response)
 
         this.stuff = this.stuffService.getStuffList()
 
