@@ -1,19 +1,38 @@
 .stuff-item
-	.header
-		display: flex
-		justify-content: space-between
-		align-items: center
+  .header
+    display: flex
+    justify-content: space-between
+    align-items: center
 
-	h1
-		margin-bottom: 1.5rem
+  h1
+    margin-bottom: 1.5rem
 
-	.info
+  &__preloader
+    display: flex
+    justify-content: center
+    align-items: center
+    margin: 0 auto
+    height: 300px
+    width: auto
+    color: #cccccc
+    opacity: 0.5
 
-		&__img
-			width: 350px
-			height: 350px
-			border: 1px solid  #ccc
-			margin-bottom: 1.5rem
+    &-wrapper
+      width: 100%
+      height: 100%
+      background-color: #cccccc
 
-		&__description
-			margin-bottom: 0.7rem
+
+
+  .info
+
+    &__img
+      width: 350px
+      height: 350px
+      border: 1px solid #ccc
+      margin-bottom: 1.5rem
+
+    &__description
+      margin-bottom: 0.7rem
+
+
