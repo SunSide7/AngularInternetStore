@@ -38,6 +38,7 @@ export class StuffAddService {
       deleted: false,
     },
   ];
+  isStuffFromServer: boolean = false
 
   constructor(private http: HttpClient) {
   }
@@ -54,6 +55,8 @@ export class StuffAddService {
           this.stuff = this.getStuffList();
 
           console.log('Promise done! This.stuff:', this.stuff);
+
+          this.isStuffFromServer = true
 
           resolve();
 

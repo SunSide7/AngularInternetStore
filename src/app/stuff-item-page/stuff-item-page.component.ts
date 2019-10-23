@@ -22,14 +22,23 @@ export class StuffItemPageComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.stuffService.stuffFromServerInit()
-      .then(() => {
+    if (this.stuffService.isStuffFromServer) {
 
-        this.route.params.subscribe((params: Params) => {
-          this.stuffItem = this.stuffService.getById(params.id);
-        });
-
+      this.route.params.subscribe((params: Params) => {
+        this.stuffItem = this.stuffService.getById(params.id);
       });
+
+    } else {
+
+      this.stuffService.stuffFromServerInit()
+        .then(() => {
+
+          this.route.params.subscribe((params: Params) => {
+            this.stuffItem = this.stuffService.getById(params.id);
+          });
+
+        });
+    }
 
   }
 
