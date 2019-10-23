@@ -3,7 +3,6 @@ import {StoreItemComponent} from '../shared/components/store-item/store-item.com
 
 import {StuffAddService} from '../shared/services/stuff-add.service';
 import {StoreService} from '../shared/services/store.service';
-import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-main-page',
@@ -19,22 +18,16 @@ export class MainPageComponent implements OnInit {
   constructor(
     private stuffService: StuffAddService,
     private storeService: StoreService,
-    private http: HttpClient
   ) {
   }
 
   ngOnInit() {
-    const stuff = this.http.get('https://api.myjson.com/bins/kqp6w')
-      .subscribe(response => {
-        console.log('Response', response);
 
-        this.stuffService.getStuffListResponse(response)
-
-        this.stuff = this.stuffService.getStuffList()
-
+    this.stuffService.stuffFromServerInit()
+      .then(() => {
+        this.stuff = this.stuffService.getStuffList();
       });
 
-    console.log(stuff);
   }
 
   getStuff(id) {

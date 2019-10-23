@@ -39,6 +39,31 @@ export class StuffAddService {
     },
   ];
 
+  constructor(private http: HttpClient) {
+  }
+
+  stuffFromServerInit() {
+    const stuffPromise = new Promise(resolve => {
+      // Async Operation
+      this.http.get('https://api.myjson.com/bins/kqp6w')
+        .subscribe(response => {
+          console.log('Response', response);
+
+          this.getStuffListResponse(response);
+
+          this.stuff = this.getStuffList();
+
+          console.log('Promise done! This.stuff:', this.stuff);
+
+          resolve();
+
+        });
+
+    });
+
+    return stuffPromise;
+  }
+
   getStuffList() {
     return this.stuff;
   }

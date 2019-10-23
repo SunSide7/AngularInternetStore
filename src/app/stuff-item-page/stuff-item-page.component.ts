@@ -6,33 +6,39 @@ import {StuffAddService} from '../shared/services/stuff-add.service';
 import {StoreService} from '../shared/services/store.service';
 
 @Component({
-    selector: 'app-stuff-item-page',
-    templateUrl: './stuff-item-page.component.html',
-    styleUrls: ['./stuff-item-page.component.sass']
+  selector: 'app-stuff-item-page',
+  templateUrl: './stuff-item-page.component.html',
+  styleUrls: ['./stuff-item-page.component.sass']
 })
 export class StuffItemPageComponent implements OnInit {
 
-    stuffItem: StuffItem;
+  stuffItem: StuffItem;
 
-    constructor(
-        private route: ActivatedRoute,
-        private stuffAddService: StuffAddService,
-        private storeService: StoreService,
-    ) {
-    }
+  constructor(
+    private route: ActivatedRoute,
+    private stuffService: StuffAddService,
+    private storeService: StoreService,
+  ) {
+  }
 
-    ngOnInit() {
+  ngOnInit() {
+    this.stuffService.stuffFromServerInit()
+      .then(() => {
+
         this.route.params.subscribe((params: Params) => {
-            this.stuffItem = this.stuffAddService.getById(params.id);
+          this.stuffItem = this.stuffService.getById(params.id);
         });
-    }
 
-    onAddToCard() {
-        const stuffItem = this.stuffAddService.getById(this.stuffItem.id);
+      });
 
-        this.storeService.addStuff(stuffItem);
+  }
 
-        console.log(stuffItem);
-    }
+  onAddToCard() {
+    const stuffItem = this.stuffService.getById(this.stuffItem.id);
+
+    this.storeService.addStuff(stuffItem);
+
+    console.log(stuffItem);
+  }
 
 }
