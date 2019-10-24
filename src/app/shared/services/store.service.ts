@@ -26,7 +26,7 @@ export class StoreService {
     }
 
     deleteStuff(stuff) {
-        const splicedItem = this.card.splice(this.card.indexOf(stuff), 1);
+        this.card.splice(this.card.indexOf(stuff), 1);
 
         this.stuffAddService.setStuffDeleted(stuff.id);
         this.stuffAddService.getById(stuff.id).quantity = 0;

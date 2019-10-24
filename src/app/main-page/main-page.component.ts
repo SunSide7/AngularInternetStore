@@ -37,12 +37,4 @@ export class MainPageComponent implements OnInit {
     }
 
   }
-
-  getStuff(id) {
-    const stuffItem = this.stuff.filter(item => item.id === id)[0];
-
-    this.storeService.addStuff(stuffItem);
-
-  }
-
 }

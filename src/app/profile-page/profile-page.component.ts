@@ -14,13 +14,11 @@ export class ProfilePageComponent implements OnInit {
     profileInfo = this.profileInfoService.getProfileInfo();
 
     isInfoChanged: boolean = false;
-    isInfoSaved: boolean = true;
 
     constructor(private profileInfoService: ProfileInfoService) {
     }
 
     ngOnInit() {
-        // @ts-ignore
       this.form = new FormGroup({
             name: new FormControl(this.profileInfo.name, [
                 Validators.required

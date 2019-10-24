@@ -26,10 +26,6 @@ export class StorePageComponent implements OnInit {
         this.dialogService.fillInBtnText(this.idModalDialogMessage)
     }
 
-    getStuffNumber() {
-        this.storeService.getNumberOfStuffList();
-    }
-
     onBuyActionClick() {
         this.storeService.clearStuffList();
         this.dialogService.showInfoById(true, this.idModalDialogMessage);

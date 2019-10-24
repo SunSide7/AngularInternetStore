@@ -18,16 +18,11 @@ export class StoreItemComponent implements OnInit {
     ngOnInit() {
     }
 
-
-    getStuff() {
-        // console.log(this.stuff)
-    }
-
     deleteStuff(id) {
 
         this.storeService.deleteStuff(this.item);
 
-        console.log("from deleteStuff:", this.item)
+        console.log('from deleteStuff:', this.item)
 
     }
 

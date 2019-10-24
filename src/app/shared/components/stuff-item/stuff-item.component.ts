@@ -18,10 +18,8 @@ export class StuffItemComponent implements OnInit {
 
     }
 
-    getStuff(id) {
-
+    getStuff() {
         this.storeService.addStuff(this.item);
-
     }
 
 }

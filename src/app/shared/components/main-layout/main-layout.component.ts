@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../services/auth.service'
-import { StoreService } from '../../services/store.service'
+import {Component, OnInit} from '@angular/core';
+import {AuthService} from '../../services/auth.service';
+import {StoreService} from '../../services/store.service';
 
 @Component({
   selector: 'app-main-layout',
@@ -11,19 +11,19 @@ import { StoreService } from '../../services/store.service'
 })
 export class MainLayoutComponent implements OnInit {
 
-  store = []
-  storeNumber = this.storeService.getNumberOfStuffList()
+  store = [];
 
   constructor(
     private auth: AuthService,
     private storeService: StoreService
-   ) { }
+  ) {
+  }
 
   ngOnInit() {
   }
 
   getStuffNumber() {
-    return this.storeService.getNumberOfStuffList()
+    return this.storeService.getNumberOfStuffList();
   }
 
 }

@@ -1,10 +1,11 @@
 import {Injectable, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {Stuff} from '../interfaces';
 
 @Injectable({providedIn: 'root'})
 
 export class StuffAddService {
-  stuff = [
+  stuff: Array<Stuff> = [
     {
       name: 'Stuff 1',
       image: '',
@@ -38,7 +39,8 @@ export class StuffAddService {
       deleted: false,
     },
   ];
-  isStuffFromServer: boolean = false
+
+  isStuffFromServer = false;
 
   constructor(private http: HttpClient) {
   }
@@ -48,15 +50,12 @@ export class StuffAddService {
       // Async Operation
       this.http.get('https://api.myjson.com/bins/kqp6w')
         .subscribe(response => {
-          console.log('Response', response);
 
           this.getStuffListResponse(response);
 
           this.stuff = this.getStuffList();
 
-          console.log('Promise done! This.stuff:', this.stuff);
-
-          this.isStuffFromServer = true
+          this.isStuffFromServer = true;
 
           resolve();
 
